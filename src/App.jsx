@@ -8,9 +8,11 @@ function App() {
   const canvas=useRef()
   const glTaskQueue=useRef([])
   useEffect(() => {
-    
+    const _canvas=canvas.current
+    _canvas.width=window.innerWidth
+    _canvas.height=window.innerHeight 
     const gl=useGetGl(canvas)
-
+   
     //顶点着色器
     //attribute 解决硬编码
     const vsSource=`
